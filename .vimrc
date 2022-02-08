@@ -12,6 +12,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/nerdtree'
 let g:NERDTreeNodeDelimiter = "\u00a0"
 Plugin 'scrooloose/syntastic'
+Plugin 'theniceboy/vim-calc'
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -44,6 +45,6 @@ set number
 nnoremap <C-Up> :bnext!<CR>
 nnoremap <C-Down> :bprev!<CR>
 nnoremap cd :bp\|bd! #<CR>
+nnoremap <LEADER>a :call Calc()<CR>
 " Start NERDTree and put the cursor back in the other window.
 autocmd VimEnter * NERDTree | wincmd p
-
