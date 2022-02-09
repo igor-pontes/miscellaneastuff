@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+ Copyright (C) 2010 r4ito <r4ito@yahoo.com>
+
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Library General Public
+ License as published by the Free Software Foundation; either
+ version 2 of the License, or (at your option) any later version.
+
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Library General Public License for more details.
+
+ Used Cobalt scheme by Will Farrington as base
+-->
+
+<style-scheme id="sugoi" name="sugoi" version="1.0">
+  <author>r4ito@yahoo.com</author>
+  <description>Dark yummy</description>
+
+  <!-- Colors -->
+  <color name="fondo"                       value="#222222"/>  
+  <color name="linea_actual"                value="#333333"/>
+  <color name="numeros_fg"                  value="#FEFEFE"/>
+  <color name="numeros_bg"                  value="#2D2D2D"/>
+  <color name="parentesis"                  value="#F0CB37"/>
+  <color name="seleccion_fg"                value="#FFFFFF"/>
+  <color name="seleccion_bg"                value="#728EA8"/>
+  <color name="busqueda_fg"                 value="#333333"/>
+  <color name="busqueda_bg"                 value="#FEFE98"/>
+  
+  <!-- #comentario -->
+  <color name="comentario"                  value="#99DCFE"/>
+  <!-- def, class -->
+  <color name="clave"                       value="#FFD630"/>
+  <!-- :simbolo -->
+  <color name="simbolo"                     value="#CBFECB"/>
+  <!-- @variable -->
+  <color name="variable"                    value="#BCDD58"/>
+  <!-- "texto", 'texto' -->
+  <color name="texto_fg"                    value="#FFFFFF"/>
+  <color name="texto_bg"                    value="#2F2F2F"/>
+  <!-- true, false, nil, 56, attr_accessor && class Nombre, include,require, MAZE -->
+  <color name="misc"                        value="#FEFE98"/>
+  <!-- regex /^algo$/ -->
+  <color name="regex"                       value="#CBFECB"/>
+ 
+  <!--
+  * From here there's a lot to do...
+  * there're a lot of other styles to modify in order
+  * to remove the original colors but I'm lazy to do it
+  * since I just want a nice scheme for ruby and php
+  -->
+  <!-- original colors of Cobalt scheme -->
+  <color name="faded_yellow"                value="#ffee80"/>
+  <color name="bright_orange"               value="#ff9d00"/>
+  <color name="faded_orange"                value="#ffb054"/>
+  <color name="nail_polish_pink"            value="#ff0044"/>
+  <color name="neon_pink"                   value="#ffdd00"/>
+  <color name="sky_blue"                    value="#0088ff"/>
+  <color name="teal_blue"                   value="#80ffbb"/>
+  <color name="light_blue"                  value="#0065bf"/>
+  <color name="medium_blue"                 value="#003b70"/>
+  <color name="dark_blue"                   value="#001b33"/>
+  <color name="black_blue"                  value="#000d1a"/>
+  <color name="white"                       value="#ffffff"/>
+  <color name="pale_grey"                   value="#eeeeee"/>
+  <color name="steel_grey"                  value="#333333"/>
+  <color name="spring_green"                value="#3ad900"/>
+  <color name="sea_green"                   value="#00BF8C"/>
+  <color name="light_grey"                  value="#cccccc"/>
+  <color name="dark_maroon"                 value="#002f29"/>
+  <color name="bluish_grey"                 value="#777777"/>
+  <color name="steelblue3"                  value="#4f94cd"/>
+
+  <!-- Global Settings -->
+
+  <style name="text"                        foreground="white" background="fondo"/>
+  <style name="selection"                   foreground="seleccion_fg" background="seleccion_bg"/>
+  <style name="cursor"                      foreground="white"/>
+  <style name="current-line"                background="linea_actual"/>
+  <style name="line-numbers"                foreground="numeros_fg" background="numeros_bg"/>
+  <style name="draw-spaces"                 foreground="bluish_grey"/>
+  
+  <!-- Bracket Matching -->
+  <style name="bracket-match"               foreground="parentesis"/>
+  <style name="bracket-mismatch"            background="dark_maroon" bold="true"/>
+
+  <!-- Search Matching -->
+  <style name="search-match"                foreground="busqueda_fg" background="busqueda_bg"/>
+
+  <!-- Bookmarks FIXME -->
+  <style name="bookmark"                    background="white"/>
+
+  <!-- Comments -->
+  <style name="def:comment"                 foreground="comentario"/>
+  <style name="def:shebang"                 foreground="comentario"/>
+  <style name="def:doc-comment-element"     bold="true"/>
+
+  <!-- Constants and Variables-->
+  <style name="def:constant"                foreground="faded_yellow"/>
+  <style name="def:string"                  foreground="texto_fg" background="texto_bg"/>
+  <style name="def:special-char"            foreground="variable"/>
+  <style name="def:special-constant"        foreground="misc" bold="true"/>
+  <style name="def:number"                  foreground="misc"/>
+  <style name="def:floating-point"          foreground="misc"/>
+  <style name="def:keyword"                 foreground="clave"/>
+  <style name="def:builtin"                 foreground="clave" bold="true"/>
+  <style name="def:variable"                foreground="variable"/>
+  
+  <!-- Identifiers -->
+  <style name="def:identifier"              foreground="variable"/>
+  <style name="def:function"                use-style="def:identifier"/>
+
+  <!-- Statements -->
+  <style name="def:statement"               foreground="misc"/>
+
+  <!-- Types -->
+  <style name="def:type"                    foreground="misc"/>
+  
+  <!-- Others -->
+  <style name="def:error"                   foreground="white" background="dark_maroon" bold="true"/>
+  <style name="def:note"                    foreground="neon_pink" bold="true"/>
+  <style name="def:net-address-in-comment"  foreground="teal_blue" italic="false" underline="true"/>
+  <style name="def:preprocessor"            foreground="light_grey"/>
+    
+  <!-- Unknown? -->
+  <style name="def:specials"                foreground="white" background="neon_pink"/>
+  <style name="def:boolean"                 foreground="misc"/>
+
+
+  <!-- Diff Styles -->
+  <style name="diff:ignore"                 foreground="bluish_grey"/>
+  <style name="diff:added-line"             foreground="faded_yellow"/>
+  <style name="diff:removed-line"           foreground="spring_green"/>
+  <style name="diff:changed-line"           foreground="bright_orange"/>
+  <style name="diff:diff-file"              foreground="sky_blue" bold="true"/>
+  <style name="diff:location"               foreground="sky_blue"/>
+  <style name="diff:special-case"           foreground="nail_polish_pink" bold="true"/>
+
+  <!-- Ruby Styles -->
+  <style name="ruby:module-handler"         foreground="nombre"/>
+  <style name="ruby:symbol"                 foreground="simbolo"/>
+  <style name="ruby:regex"                  foreground="regex"/>
+
+  <!-- SH Styles -->
+  <style name="sh:function"                 foreground="neon_pink"/>
+  
+  <!-- XML Styles -->
+  <style name="xml:attribute-name"          foreground="white"/>
+  <style name="xml:element-name"            foreground="clave"/>
+  <style name="xml:entity"                  foreground="simbolo"/>
+  <style name="xml:processing-instruction"  bold="true"/>
+
+</style-scheme>
