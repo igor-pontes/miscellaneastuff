@@ -28,12 +28,13 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline#extensions#tabline#formatter = 'default'
-let g:airline_theme='elly'
-Plugin 'ulwlu/elly.vim'
+let g:airline_theme='minimalist'
+" Plugin 'ulwlu/elly.vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
-colorscheme elly
+" elly, phoenix
+colorscheme phoenix 
 set termguicolors
 " show existing tab with 4 spaces width
 set tabstop=4
@@ -41,10 +42,13 @@ set tabstop=4
 set shiftwidth=4
 " On pressing tab, insert 4 spaces
 set expandtab
+set smartindent
 set number
+syntax on
 nnoremap <C-Up> :bnext!<CR>
 nnoremap <C-Down> :bprev!<CR>
 nnoremap cd :bp\|bd! #<CR>
 nnoremap <LEADER>a :call Calc()<CR>
 " Start NERDTree and put the cursor back in the other window.
 autocmd VimEnter * NERDTree | wincmd p
+
