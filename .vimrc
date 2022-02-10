@@ -32,6 +32,25 @@ let g:airline_theme='minimalist'
 " Plugin 'ulwlu/elly.vim'
 
 call vundle#end()            " required
+
+" set autochdir
+function Find()
+    let [line_start, column_start] = getpos("'<")[1:2]
+    let [line_end, column_end] = getpos("'>")[1:2]
+    let lines = getline(line_start, line_end)
+    if len(lines) == 0
+        return ''
+    endif
+    let lines[-1] = lines[-1][: column_end - (&selection == 'inclusive' ? 1 : 2)]
+    let lines[0] = lines[0][column_start - 1:]
+    let pattern = join(lines, "\n")
+    let cmd = 'grep -rnw ./ -e '.pattern
+    execute "let output = system(cmd)"
+    tabnew 
+    setlocal nobuflisted buftype=nofile bufhidden=wipe noswapfile
+    call setline(1, split(output, "\n"))
+endfunction
+
 filetype plugin indent on    " required
 " elly, phoenix
 colorscheme phoenix 
@@ -52,3 +71,4 @@ nnoremap <LEADER>a :call Calc()<CR>
 " Start NERDTree and put the cursor back in the other window.
 autocmd VimEnter * NERDTree | wincmd p
 
+ 
