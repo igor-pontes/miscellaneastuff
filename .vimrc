@@ -10,14 +10,18 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/nerdtree'
+Plugin 'ayu-theme/ayu-vim' 
 let g:NERDTreeNodeDelimiter = "\u00a0"
+Plugin 'rust-lang/rust.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'theniceboy/vim-calc'
-
+Plugin 'hachy/eva01.vim'
+Plugin 'tmsvg/pear-tree'
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
+let ayucolor="dark"
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
@@ -28,12 +32,13 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline#extensions#tabline#formatter = 'default'
-let g:airline_theme='minimalist'
+let g:airline_theme='zenburn'
+
 " Plugin 'ulwlu/elly.vim'
 
 call vundle#end()            " required
 
-" set autochdir
+set autochdir
 function Find()
     let [line_start, column_start] = getpos("'<")[1:2]
     let [line_end, column_end] = getpos("'>")[1:2]
@@ -52,8 +57,9 @@ function Find()
 endfunction
 
 filetype plugin indent on    " required
-" elly, phoenix
-colorscheme phoenix 
+" elly, phoenix, eva01, ayu
+colorscheme ayu 
+
 set termguicolors
 " show existing tab with 4 spaces width
 set tabstop=4
@@ -61,6 +67,7 @@ set tabstop=4
 set shiftwidth=4
 " On pressing tab, insert 4 spaces
 set expandtab
+"set autoindent
 set smartindent
 set number
 syntax on
