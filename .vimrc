@@ -3,25 +3,27 @@ filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
+
 call vundle#begin()
-
+packadd! dracula
 Plugin 'VundleVim/Vundle.vim'
-
+Plugin 'elixir-editors/vim-elixir'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/nerdtree'
-Plugin 'ayu-theme/ayu-vim' 
 let g:NERDTreeNodeDelimiter = "\u00a0"
 Plugin 'rust-lang/rust.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'theniceboy/vim-calc'
-Plugin 'hachy/eva01.vim'
+Plugin 'wadackel/vim-dogrun'
+Plugin 'cocopon/iceberg.vim'
 Plugin 'tmsvg/pear-tree'
+Plugin 'valloric/youcompleteme'
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-
-let ayucolor="dark"
+let g:ycm_key_list_stop_completion = ['<C-Space>']
+let g:ycm_autoclose_preview_window_after_completion = 1
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
@@ -33,8 +35,7 @@ let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline#extensions#tabline#formatter = 'default'
 let g:airline_theme='zenburn'
-
-" Plugin 'ulwlu/elly.vim'
+let g:NERDTreeWinSize=20
 
 call vundle#end()            " required
 
@@ -57,8 +58,8 @@ function Find()
 endfunction
 
 filetype plugin indent on    " required
-" elly, phoenix, eva01, ayu
-colorscheme ayu 
+" dogrun, iceberg
+colorscheme iceberg
 
 set termguicolors
 " show existing tab with 4 spaces width
@@ -68,14 +69,19 @@ set shiftwidth=4
 " On pressing tab, insert 4 spaces
 set expandtab
 "set autoindent
+"set noesckeys
+set nocompatible
 set smartindent
 set number
+set ttimeoutlen=5
 syntax on
+autocmd FileType vim let b:vcm_tab_complete = 'vim'
 nnoremap <C-Up> :bnext!<CR>
+noremap <A-Up> ddkP
+noremap <A-Down> ddp
 nnoremap <C-Down> :bprev!<CR>
 nnoremap cd :bp\|bd! #<CR>
 nnoremap <LEADER>a :call Calc()<CR>
 " Start NERDTree and put the cursor back in the other window.
 autocmd VimEnter * NERDTree | wincmd p
 
- 
