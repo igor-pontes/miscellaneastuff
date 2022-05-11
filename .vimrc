@@ -5,7 +5,6 @@ filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
 
 call vundle#begin()
-packadd! dracula
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'elixir-editors/vim-elixir'
 Plugin 'tpope/vim-fugitive'
@@ -22,6 +21,7 @@ Plugin 'valloric/youcompleteme'
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
+set background=dark
 let g:ycm_key_list_stop_completion = ['<C-Space>']
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:syntastic_always_populate_loc_list = 1
