@@ -1,3 +1,9 @@
+if &term =~ '^xterm'
+  " normal mode
+  let &t_EI .= "\<Esc>[1 q"
+  " insert mode
+  let &t_SI .= "\<Esc>[6 q"
+endif
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -21,7 +27,6 @@ Plugin 'valloric/youcompleteme'
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-set background=dark
 let g:ycm_key_list_stop_completion = ['<C-Space>']
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:syntastic_always_populate_loc_list = 1
@@ -38,6 +43,8 @@ let g:airline_theme='zenburn'
 let g:NERDTreeWinSize=20
 
 call vundle#end()            " required
+
+set background=dark
 
 set autochdir
 function Find()
@@ -80,6 +87,8 @@ nnoremap <C-Up> :bnext!<CR>
 noremap <A-Up> ddkP
 noremap <A-Down> ddp
 nnoremap <C-Down> :bprev!<CR>
+nnoremap <S-Down> <C-e>
+nnoremap <S-Up> <C-y>
 nnoremap cd :bp\|bd! #<CR>
 nnoremap <LEADER>a :call Calc()<CR>
 " Start NERDTree and put the cursor back in the other window.
